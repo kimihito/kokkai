@@ -1,5 +1,5 @@
-require "kokkai/version"
+require "faraday"
+require "faraday_middleware"
 
-module Kokkai
-  # Your code goes here...
-end
+require "kokkai/version"
+require "kokkai/client"
