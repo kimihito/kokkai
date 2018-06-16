@@ -1,5 +1,4 @@
 require 'kokkai/utils/string_formatter.rb'
-require 'pry'
 module Kokkai
   class Record
     using Utils::StringFormatter
