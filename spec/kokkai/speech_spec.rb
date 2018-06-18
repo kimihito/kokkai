@@ -13,6 +13,10 @@ RSpec.describe Kokkai::Speech do
   subject(:record) { described_class.new(raw_data) }
 
   describe '#speech' do
-    it { expect(record.speech).to eq raw_data["recordData"]["speechRecord"]["speech"]}
+    it { expect(record.speech).to eq raw_data["recordData"]["speechRecord"]["speech"] }
+  end
+
+  describe '#meeting_url' do
+    it { expect(record.meeting_url).to eq raw_data["recordData"]["speechRecord"]["meetingURL"] }
   end
 end
