@@ -1,3 +1,4 @@
+require 'erb'
 require 'kokkai/errors'
 require 'kokkai/api_methods'
 require 'kokkai/response'
