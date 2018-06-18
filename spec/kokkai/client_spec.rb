@@ -5,7 +5,7 @@ RSpec.describe Kokkai::Client  do
   describe "#speech", vcr: true do
     it "returns speeches" do
       params = {any: "アベノミクス", speaker: "安倍晋三", startRecord: 1, maximumRecords: 5}
-      expect(client.speech(params).body).to eq "hoge"
+      expect(client.speech(params).body).to be_a(Kokkai::Parser)
     end
   end
 end
