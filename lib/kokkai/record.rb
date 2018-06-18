@@ -1,6 +1,8 @@
+require 'memoist'
 require 'kokkai/utils/string_formatter.rb'
 module Kokkai
   class Record
+    extend Memoist
     using Utils::StringFormatter
 
     attr_reader :raw, :raw_record
@@ -13,6 +15,7 @@ module Kokkai
           define_method(attr) do
             @raw_record ? @raw_record[attr.to_s.to_camel] : nil
           end
+          memoize attr
         end
       end
     end

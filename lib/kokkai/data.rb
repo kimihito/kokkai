@@ -1,7 +1,9 @@
+require 'memoist'
 require 'kokkai/utils/string_formatter.rb'
 require 'kokkai/speech'
 module Kokkai
   class Data
+    extend Memoist
     using Utils::StringFormatter
 
     attr_reader :raw_data
@@ -12,6 +14,7 @@ module Kokkai
       define_method(attr) do
         @raw_data ? @raw_data[attr.to_s.to_camel] : nil
       end
+      memoize attr
     end
 
     def initialize(raw_data)
