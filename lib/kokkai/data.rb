@@ -1,6 +1,8 @@
 require 'memoist'
 require 'kokkai/utils/string_formatter.rb'
 require 'kokkai/speech'
+require 'kokkai/meeting'
+
 module Kokkai
   class Data
     extend Memoist
