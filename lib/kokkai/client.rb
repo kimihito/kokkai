@@ -2,11 +2,11 @@ require 'erb'
 require 'kokkai/errors'
 require 'kokkai/api_methods'
 require 'kokkai/response'
+require 'kokkai/utils/string_formatter'
 
 module Kokkai
   class Client
     include ApiMethods
-
     def initialize
     end
 
@@ -54,10 +54,14 @@ module Kokkai
   end
 
   class ParamsEncoder
+    using Utils::StringFormatter
+
     def self.encode(params)
-      str = params.map {|(key, value)|
+      camelized_params = Hash[params.map {|k,v| [k.to_s.to_camel.to_sym, v]}]
+      str = camelized_params.map {|(key, value)|
         "#{key}=#{value}"
       }.join('&')
+
       return ERB::Util.url_encode(str)
     end
 
