@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kimihito/kokkai.svg?branch=master)](https://travis-ci.org/kimihito/kokkai)
 
-http://kokkai.ndl.go.jp/api.html client library, written in Ruby
+[国会会議録検索システム検索用API](http://kokkai.ndl.go.jp/api.html) client library, written in Ruby
 
 ## Installation
 
