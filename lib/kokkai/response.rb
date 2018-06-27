@@ -9,7 +9,7 @@ module Kokkai
     end
 
     def body
-      Parser.new(@raw_body)
+      Parser.new(@raw_body, @raw_status)
     end
 
     def headers

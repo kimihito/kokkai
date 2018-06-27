@@ -1,5 +1,4 @@
 require 'erb'
-require 'kokkai/errors'
 require 'kokkai/api_methods'
 require 'kokkai/response'
 require 'kokkai/utils/string_formatter'
