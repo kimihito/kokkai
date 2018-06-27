@@ -1,8 +1,8 @@
 # Kokkai
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kokkai`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/kimihito/kokkai.svg?branch=master)](https://travis-ci.org/kimihito/kokkai)
 
-TODO: Delete this and the text above, and describe your gem
+http://kokkai.ndl.go.jp/api.html client library, written in Ruby
 
 ## Installation
 
@@ -22,7 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# Initialization
+client = Kokkai::Client.new
+
+# Call speech data
+client.speech(any: "アベノミクス", speaker: "安倍晋三", start_record: 1, maximum_records: 5).body.data
+
+
+# call meeting API
+
+client.meeting(name_of_house: "両院", name_of_meeting: "国家基本政策委員会合同審査会").body.data
+
+
+```
+
+More information about parameters and attributes is [here](http://kokkai.ndl.go.jp/api.html#specification) (Japanese).
+
 
 ## Development
 
@@ -32,7 +48,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kokkai.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kimihito/kokkai.
 
 ## License
 
