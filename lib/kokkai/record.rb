@@ -15,7 +15,7 @@ module Kokkai
           define_method(attr) do
             key = attr.to_s
             key = if key.match(/_url$/)
-              key = key.split(/_url$/) { |s| s }.join() + ""
+              key = key.split(/_url$/).join() + ""
               key << "URL"
             else
               key.to_camel
